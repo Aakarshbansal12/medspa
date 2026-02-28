@@ -94,6 +94,7 @@ function AppointmentForm() {
           </div>
           
           <div className="form-group date-field">
+            <label>Booking date</label>
             <input
               type="date"
               name="date"
