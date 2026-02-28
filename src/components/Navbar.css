@@ -396,7 +396,7 @@ section {
     display: none; /* Hide text on very small screens, keep only logo */
   }
   
-  .logo-image {
+  .logo-image  {
     height: 40px;
   }
 }
