@@ -37,6 +37,11 @@ function AppointmentForm() {
     });
   };
 
+  // Get tomorrow's date for min attribute
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  const minDate = tomorrow.toISOString().split('T')[0];
+
   return (
     <section id="appointment" className="appointment">
       <div className="container">
@@ -88,12 +93,14 @@ function AppointmentForm() {
             </select>
           </div>
           
-          <div className="form-group">
+          <div className="form-group date-field">
             <input
               type="date"
               name="date"
               value={formData.date}
               onChange={handleChange}
+              min={minDate}
+              placeholder="Select Date"
               required
             />
           </div>

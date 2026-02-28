@@ -1,75 +1,271 @@
+/* Main section styling */
+.before-after {
+  padding: 60px 0;
+  background-color: #fafafa;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll of entire page */
+}
+
+.before-after .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 40px;
+  position: relative;
+  width: 100%;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #d4af37;
+}
+
+/* Desktop Gallery grid */
 .gallery {
   display: grid;
-  /* Adjusting min-width to ensure 2 images + gap fit comfortably */
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 40px;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .gallery-item {
   background: #fff;
-  padding: 15px;
+  padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Soft shadow for a "card" feel */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
   transition: transform 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .gallery-item:hover {
   transform: translateY(-5px);
 }
-.image-placeholder {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-bottom: 10px;
-}
 
-.image-placeholder .before,
-.image-placeholder .after {
-  background: linear-gradient(145deg, #f0f0f0 0%, #e0e0e0 100%);
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #666;
-  border-radius: 8px;
-  font-size: 14px;
-}
+/* Image container */
 .image-container {
   display: flex;
-  gap: 8px; /* Small gap between before/after */
+  gap: 12px;
   margin-bottom: 15px;
+  width: 100%;
 }
 
 .image-box {
-  flex: 1; /* Ensures both boxes take up 50% width */
+  flex: 1;
   position: relative;
   overflow: hidden;
-  border-radius: 6px;
+  border-radius: 8px;
+  aspect-ratio: 3/4;
+  background-color: #f0f0f0;
 }
 
 .image-box img {
   width: 100%;
-  /* This is the magic part: */
-  aspect-ratio: 3 / 4; 
-  object-fit: cover; 
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
+
 .label {
   position: absolute;
   bottom: 8px;
   left: 8px;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
   color: white;
-  padding: 2px 8px;
-  font-size: 10px;
+  padding: 4px 12px;
+  font-size: 12px;
   text-transform: uppercase;
   border-radius: 4px;
   letter-spacing: 1px;
+  font-weight: 500;
+  z-index: 2;
 }
+
 .treatment-name {
   font-weight: 600;
   color: #333;
-  font-size: 1.1rem;
-  margin: 0;
+  font-size: 1.2rem;
+  margin: 10px 0 0;
+  text-align: center;
+}
+
+/* Tablet responsive */
+@media (max-width: 1024px) {
+  .before-after {
+    padding: 50px 0;
+  }
+  
+  .gallery {
+    gap: 25px;
+  }
+  
+  .gallery-item {
+    padding: 18px;
+  }
+  
+  .image-container {
+    gap: 10px;
+  }
+}
+
+/* Mobile responsive - Carousel View */
+@media (max-width: 768px) {
+  .before-after {
+    padding: 40px 0;
+  }
+  
+  .before-after .container {
+    padding: 0 15px;
+  }
+  
+  .section-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  
+  /* Carousel styles for mobile */
+  .gallery {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 10px 15px 20px 15px;
+    margin: 0 -15px; /* Extend to full width */
+    width: calc(100% + 30px); /* Compensate for container padding */
+    scrollbar-width: thin;
+    scrollbar-color: #d4af37 #f0f0f0;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  }
+  
+  /* Custom scrollbar for webkit browsers */
+  .gallery::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  .gallery::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 10px;
+  }
+  
+  .gallery::-webkit-scrollbar-thumb {
+    background: #d4af37;
+    border-radius: 10px;
+  }
+  
+  .gallery-item {
+    flex: 0 0 calc(100% - 30px); /* Show one item at a time with some margin */
+    scroll-snap-align: center;
+    padding: 15px;
+    margin-right: 10px;
+  }
+  
+  .gallery-item:last-child {
+    margin-right: 0;
+  }
+  
+  .image-container {
+    gap: 8px;
+  }
+  
+  .label {
+    font-size: 10px;
+    padding: 3px 8px;
+    bottom: 5px;
+    left: 5px;
+  }
+  
+  .treatment-name {
+    font-size: 1rem;
+    margin-top: 8px;
+  }
+  
+  /* Add carousel indicators */
+  .carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+  }
+  
+  .indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ddd;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .indicator.active {
+    background-color: #d4af37;
+    transform: scale(1.2);
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .before-after {
+    padding: 30px 0;
+  }
+  
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+  
+  .gallery {
+    gap: 15px;
+    padding: 10px 10px 20px 10px;
+  }
+  
+  .gallery-item {
+    flex: 0 0 calc(100% - 20px);
+    padding: 12px;
+  }
+  
+  .image-container {
+    gap: 6px;
+  }
+  
+  .image-box {
+    border-radius: 6px;
+  }
+  
+  .label {
+    font-size: 9px;
+    padding: 2px 6px;
+  }
+  
+  .indicator {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+/* Hide scrollbar on very small phones if needed */
+@media (max-width: 360px) {
+  .gallery {
+    scrollbar-width: none; /* Hide scrollbar on very small devices */
+  }
+  
+  .gallery::-webkit-scrollbar {
+    display: none;
+  }
 }

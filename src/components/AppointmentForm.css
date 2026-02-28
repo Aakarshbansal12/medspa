@@ -1,5 +1,31 @@
 .appointment {
   background-color: #f9f9f9;
+  padding: 60px 0;
+}
+
+.appointment .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #d4af37;
 }
 
 .appointment-form {
@@ -13,6 +39,7 @@
 
 .form-group {
   margin-bottom: 20px;
+  position: relative;
 }
 
 .form-group input,
@@ -22,16 +49,167 @@
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 16px;
+  transition: all 0.3s ease;
 }
 
 .form-group input:focus,
 .form-group select:focus {
   outline: none;
   border-color: #d4af37;
+  box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+}
+
+/* Date input specific styling */
+.form-group input[type="date"] {
+  position: relative;
+  background-color: white;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  min-height: 46px; /* Ensure consistent height */
+}
+
+/* Style for the date input placeholder when no date is selected */
+.form-group input[type="date"]:invalid {
+  color: #757575;
+}
+
+.form-group input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background: transparent;
+  color: #d4af37;
+  filter: invert(0.7); /* Makes the icon gold-ish */
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.form-group input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+/* For Firefox */
+.form-group input[type="date"]::-moz-calendar-picker-indicator {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* For mobile browsers, ensure the field looks interactive */
+.form-group input[type="date"]::before {
+  content: attr(placeholder);
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #757575;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.form-group input[type="date"]:focus::before,
+.form-group input[type="date"]:valid::before {
+  opacity: 0;
+}
+
+/* Add a calendar icon using pseudo-element for browsers that might hide it */
+.form-group.date-field {
+  position: relative;
+}
+
+.form-group.date-field::after {
+  content: '📅';
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #d4af37;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Hide the pseudo-icon if the browser's native icon is visible */
+@supports (-webkit-appearance: none) {
+  .form-group.date-field::after {
+    display: none;
+  }
 }
 
 .btn-submit {
   width: 100%;
   padding: 15px;
   font-size: 18px;
+  background-color: #d4af37;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: #b3922c;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .appointment {
+    padding: 40px 0;
+  }
+  
+  .section-title {
+    font-size: 28px;
+  }
+  
+  .appointment-form {
+    padding: 30px 20px;
+  }
+  
+  .form-group input,
+  .form-group select {
+    font-size: 16px; /* Prevents zoom on mobile */
+    padding: 14px; /* Bigger touch target */
+  }
+  
+  .form-group input[type="date"] {
+    min-height: 50px; /* Larger touch area for mobile */
+  }
+  
+  /* Ensure calendar picker is easily tappable on mobile */
+  .form-group input[type="date"]::-webkit-calendar-picker-indicator {
+    width: 30px;
+    height: 30px;
+    right: 8px;
+  }
+  
+  .btn-submit {
+    padding: 16px;
+    font-size: 18px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .appointment-form {
+    padding: 25px 15px;
+  }
+  
+  .form-group input,
+  .form-group select {
+    padding: 14px 12px;
+  }
+  
+  .form-group input[type="date"] {
+    min-height: 52px;
+  }
 }
