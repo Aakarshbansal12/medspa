@@ -1,0 +1,98 @@
+.hero {
+  width: 100%;
+  min-height: 100vh; /* Full viewport height */
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+              url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1200');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+
+.hero .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.hero-content .subheadline {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+.hero-content .btn {
+  padding: 15px 40px;
+  font-size: 1.125rem;
+  background-color: #d4af37;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.hero-content .btn:hover {
+  background-color: #c4a027;
+}
+
+/* Highlight color for specific text */
+.hero-content .highlight {
+  color: #d4af37;
+}
+
+/* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100vh; /* Mobile pe bhi full height */
+    text-align: center;
+  }
+  
+  .hero-content {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem; /* Slightly smaller on mobile */
+  }
+  
+  .hero-content .subheadline {
+    font-size: 1.125rem;
+  }
+  
+  .hero-content .btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+}
+
+/* 📱 Small Mobile */
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-content .subheadline {
+    font-size: 1rem;
+  }
+}

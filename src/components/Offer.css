@@ -1,0 +1,32 @@
+.offer-banner {
+  background: linear-gradient(135deg, #d4af37 0%, #b3922c 100%);
+  color: white;
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.offer-tag {
+  background: rgba(255,255,255,0.2);
+  padding: 5px 15px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.offer-banner h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.offer-banner p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.offer-timer {
+  font-size: 20px;
+  font-weight: bold;
+}

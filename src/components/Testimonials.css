@@ -1,0 +1,123 @@
+.testimonials {
+  padding: 60px 0;
+  background-color: #f9f9f9;
+  width: 100%;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Grid for 3 cards in one row */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 30px; /* Gap between cards */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Individual card */
+.testimonial-card {
+  background: white;
+  border-radius: 15px;
+  padding: 35px 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.15);
+}
+
+/* Stars styling */
+.stars {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+/* Testimonial text */
+.testimonial-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  font-style: italic;
+  margin-bottom: 25px;
+  flex-grow: 1;
+  text-align: center;
+}
+
+/* Footer section with name */
+.testimonial-footer {
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+  margin-top: auto;
+}
+
+.testimonial-name {
+  font-weight: 600;
+  color: #d4af37;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* 📱 Tablet Responsive */
+@media (max-width: 992px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+    gap: 25px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+/* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+  .testimonials {
+    padding: 40px 0;
+  }
+  
+  .testimonials-grid {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+    gap: 20px;
+    padding: 0 15px;
+  }
+  
+  .testimonial-card {
+    padding: 25px 20px;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  
+  .testimonial-text {
+    font-size: 0.95rem;
+  }
+}
+
+/* 📱 Small Mobile */
+@media (max-width: 480px) {
+  .testimonial-card {
+    padding: 20px 15px;
+  }
+  
+  .testimonial-name {
+    font-size: 1rem;
+  }
+}
