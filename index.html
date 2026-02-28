@@ -2,12 +2,351 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>medspa-landing</title>
+    
+    <!-- Favicon (Optimized) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./public/logo2.png" />
+    <link rel="apple-touch-icon" href="./public/logo2.png" />
+    
+    <!-- Responsive Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    
+    <!-- ========== PRIMARY META TAGS ========== -->
+    <title>GlowMedSpa | Premium Medical Spa in Mohali & New York - Botox, Fillers & Laser</title>
+    <meta name="title" content="GlowMedSpa | Top Medical Spa in Mohali (India) & New York (US) - Botox, Fillers & Laser Treatments" />
+    <meta name="description" content="GlowMedSpa offers expert Botox, dermal fillers, laser treatments & body contouring in Mohali, India and New York, USA. 15k+ happy clients. Book your free consultation today!" />
+    <meta name="keywords" content="medical spa, botox, fillers, laser treatment, body contouring, Mohali med spa, New York med spa, India medical spa, USA medical spa, anti-aging treatments" />
+    <meta name="author" content="GlowMedSpa" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    
+    <!-- ========== CANONICAL URL ========== -->
+    <link rel="canonical" href="https://glowmedspa.netlify.app/" />
+    
+    <!-- ========== HREFLANG TAGS (CRITICAL FOR MULTI-COUNTRY) ========== -->
+    <!-- India - English -->
+    <link rel="alternate" href="https://glowmedspa.netlify.app/" hreflang="en-in" />
+    <!-- US - English -->
+    <link rel="alternate" href="https://glowmedspa.netlify.app/us/" hreflang="en-us" />
+    <!-- Default / Catch-all -->
+    <link rel="alternate" href="https://glowmedspa.netlify.app/" hreflang="x-default" />
+    
+    <!-- ========== OPEN GRAPH / FACEBOOK ========== -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://glowmedspa.netlify.app/" />
+    <meta property="og:title" content="GlowMedSpa | Premium Medical Spa - Mohali (India) & New York (USA)" />
+    <meta property="og:description" content="Expert Botox, fillers & laser treatments in Mohali, India and New York, USA. Natural-looking results by certified professionals. Book now!" />
+    <meta property="og:image" content="https://glowmedspa.netlify.app/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="GlowMedSpa" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="en_IN" />
+    
+    <!-- ========== TWITTER CARD ========== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://glowmedspa.netlify.app/" />
+    <meta name="twitter:title" content="GlowMedSpa | Top-Rated Medical Spa in Mohali & New York" />
+    <meta name="twitter:description" content="Expert Botox, fillers & laser treatments. Natural-looking results by certified professionals. 15k+ happy clients!" />
+    <meta name="twitter:image" content="https://glowmedspa.netlify.app/twitter-image.jpg" />
+    <meta name="twitter:site" content="@glowmedspa" />
+    <meta name="twitter:creator" content="@glowmedspa" />
+    
+    <!-- ========== GEO META TAGS ========== -->
+    <!-- India Location (Mohali, Punjab) -->
+    <meta name="geo.region" content="IN-PB" />
+    <meta name="geo.placename" content="Mohali, Punjab, India" />
+    <meta name="geo.position" content="30.7046;76.7179" />
+    <meta name="ICBM" content="30.7046, 76.7179" />
+    
+    <!-- US Location (New York) -->
+    <meta name="geo.region" content="US-NY" />
+    <meta name="geo.placename" content="New York, NY, USA" />
+    <meta name="geo.position" content="40.7128;-74.0060" />
+    <meta name="ICBM" content="40.7128, -74.0060" />
+    
+    <meta name="format-detection" content="telephone=no" />
+    
+    <!-- ========== MAIN SCHEMA (MedicalBusiness + LocalBusiness) ========== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["MedicalBusiness", "LocalBusiness"],
+      "@id": "https://glowmedspa.netlify.app/#medicalbusiness",
+      "name": "GlowMedSpa",
+      "description": "Premier medical spa offering Botox, dermal fillers, laser treatments, and body contouring in Mohali (India) and New York (USA).",
+      "url": "https://glowmedspa.netlify.app/",
+      "logo": "https://glowmedspa.netlify.app/logo2.png",
+      "image": "https://glowmedspa.netlify.app/og-image.jpg",
+      "priceRange": "$$ - ₹₹₹",
+      "telephone": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+91-12345-67890",
+          "contactType": "customer service",
+          "areaServed": "IN",
+          "availableLanguage": ["English", "Hindi", "Punjabi"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+1-212-555-0123",
+          "contactType": "customer service",
+          "areaServed": "US",
+          "availableLanguage": "English"
+        }
+      ],
+      "email": "info@glowmedspa.com",
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "name": "Mohali Location",
+          "streetAddress": "Sector 70, Phase 11",
+          "addressLocality": "Mohali",
+          "addressRegion": "Punjab",
+          "postalCode": "160071",
+          "addressCountry": "IN"
+        },
+        {
+          "@type": "PostalAddress",
+          "name": "New York Location",
+          "streetAddress": "123 Wellness Avenue",
+          "addressLocality": "New York",
+          "addressRegion": "NY",
+          "postalCode": "10001",
+          "addressCountry": "US"
+        }
+      ],
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "India",
+          "sameAs": "https://en.wikipedia.org/wiki/India"
+        },
+        {
+          "@type": "Country",
+          "name": "United States",
+          "sameAs": "https://en.wikipedia.org/wiki/United_States"
+        }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "19:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday"],
+          "opens": "10:00",
+          "closes": "16:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/glowmedspa",
+        "https://www.instagram.com/glowmedspa",
+        "https://twitter.com/glowmedspa"
+      ]
+    }
+    </script>
+    
+    <!-- ========== INDIA LOCATION SCHEMA (Mohali) ========== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "name": "GlowMedSpa - Mohali",
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "GlowMedSpa",
+        "url": "https://glowmedspa.netlify.app/"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sector 70, Phase 11",
+        "addressLocality": "Mohali",
+        "addressRegion": "Punjab",
+        "postalCode": "160071",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "30.7046",
+        "longitude": "76.7179"
+      },
+      "telephone": "+91-12345-67890",
+      "priceRange": "₹₹₹",
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "30.7046",
+          "longitude": "76.7179"
+        },
+        "geoRadius": "50000"
+      }
+    }
+    </script>
+    
+    <!-- ========== USA LOCATION SCHEMA (New York) ========== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "name": "GlowMedSpa - New York",
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "GlowMedSpa",
+        "url": "https://glowmedspa.netlify.app/"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Wellness Avenue",
+        "addressLocality": "New York",
+        "addressRegion": "NY",
+        "postalCode": "10001",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "40.7128",
+        "longitude": "-74.0060"
+      },
+      "telephone": "+1-212-555-0123",
+      "priceRange": "$$$",
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "40.7128",
+          "longitude": "-74.0060"
+        },
+        "geoRadius": "50000"
+      }
+    }
+    </script>
+    
+    <!-- ========== SERVICES SCHEMA ========== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Medical Spa Services",
+      "description": "Services available at GlowMedSpa in both India and USA",
+      "itemListElement": [
+        {
+          "@type": "Service",
+          "position": 1,
+          "name": "Botox Injections",
+          "description": "Reduce fine lines and wrinkles with expert Botox treatments",
+          "provider": "GlowMedSpa",
+          "areaServed": ["IN", "US"],
+          "url": "https://glowmedspa.netlify.app/#services"
+        },
+        {
+          "@type": "Service",
+          "position": 2,
+          "name": "Dermal Fillers",
+          "description": "Restore volume and enhance facial contours",
+          "provider": "GlowMedSpa",
+          "areaServed": ["IN", "US"],
+          "url": "https://glowmedspa.netlify.app/#services"
+        },
+        {
+          "@type": "Service",
+          "position": 3,
+          "name": "Laser Treatments",
+          "description": "Advanced laser technology for skin rejuvenation",
+          "provider": "GlowMedSpa",
+          "areaServed": ["IN", "US"],
+          "url": "https://glowmedspa.netlify.app/#services"
+        },
+        {
+          "@type": "Service",
+          "position": 4,
+          "name": "Body Contouring",
+          "description": "Non-surgical fat reduction and body sculpting",
+          "provider": "GlowMedSpa",
+          "areaServed": ["IN", "US"],
+          "url": "https://glowmedspa.netlify.app/#services"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- ========== FAQ SCHEMA ========== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Botox and how does it work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Botox is a neurotoxin that temporarily relaxes facial muscles to reduce the appearance of fine lines and wrinkles. Results typically last 3-4 months. Available in both Mohali (India) and New York (USA)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are dermal fillers safe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, when administered by certified professionals, dermal fillers are FDA-approved and considered very safe with minimal side effects. Our Mohali and New York locations both use premium, safe products."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where are your locations?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We have two premier locations: Sector 70, Phase 11 in Mohali, Punjab (India) and 123 Wellness Avenue in New York, NY (USA). Both locations offer the same high-quality treatments."
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <!-- ========== AGGREGATE RATING SCHEMA ========== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "name": "GlowMedSpa",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "1250",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }
+    </script>
+    
+    <!-- ========== VERIFICATION META TAGS ========== -->
+    <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" /> <!-- Add after Search Console setup -->
+    <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE" /> <!-- For Bing -->
+    
+    <!-- ========== PERFORMANCE OPTIMIZATIONS ========== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
+    
+    <!-- ========== YOUR ASSETS ========== -->
+    <script type="module" crossorigin src="/assets/index-DIqa9Iow.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-0mYspC7c.css">
+    
+    <!-- ========== FALLBACK FOR NO-JS ========== -->
+    <noscript>
+      <style>
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); }
+        .loading-fallback { display: block; text-align: center; padding: 2rem; }
+      </style>
+      <div class="loading-fallback">Please enable JavaScript for best experience</div>
+    </noscript>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
