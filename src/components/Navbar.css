@@ -24,18 +24,33 @@ body {
   width: 100%;
 }
 
+/* Update the logo class to handle both image and text */
 .logo {
-  font-size: 28px;
-  font-weight: bold;
-  color: #d4af37;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   text-decoration: none;
+  color: #d4af37;
+  font-weight: bold;
+  font-size: 28px;
   letter-spacing: 1px;
-  margin-left: 0;
   transition: color 0.3s;
 }
 
 .logo:hover {
   color: #b3922c;
+}
+
+.logo-image {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-size: 28px;
+  font-weight: bold;
+  color: #d4af37;
 }
 
 .nav-links {
@@ -84,28 +99,37 @@ body {
   }
 }
 
-/* Tablet and Mobile */
+/* Tablet and Mobile - Sirf nav-links hide honge, logo aur text nahi */
 @media (max-width: 1200px) {
   .navbar .container {
     padding: 15px 20px;
   }
   
   .nav-links {
-    display: none;
+    display: none;  /* Sirf navigation links hide honge */
   }
   
-  .logo {
+  /* Logo aur text adjust honge but remove nahi */
+  .logo-image {
+    height: 45px;
+  }
+  
+  .logo-text {
     font-size: 24px;
   }
 }
 
-/* Small mobile */
-@media (max-width: 480px) {
+/* Mobile responsive */
+@media (max-width: 768px) {
   .navbar .container {
-    padding: 12px 15px;
+    padding: 12px 20px;
   }
   
-  .logo {
+  .logo-image {
+    height: 40px;
+  }
+  
+  .logo-text {
     font-size: 22px;
   }
   
@@ -113,6 +137,36 @@ body {
     padding-top: 70px;
   }
 }
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .navbar .container {
+    padding: 10px 15px;
+  }
+  
+  .logo-image {
+    height: 35px;
+  }
+  
+  .logo-text {
+    font-size: 20px;
+  }
+  
+  .logo {
+    gap: 8px;
+  }
+  
+  body {
+    padding-top: 60px;
+  }
+}
+
+/* Remove the duplicate media query that was hiding the text */
+/* @media (max-width: 480px) {
+  .logo-text {
+    display: none;
+  }
+} */
 
 /* This ensures that when you click a link, the section stops below the navbar */
 section {
@@ -322,81 +376,5 @@ section {
   
   .team-grid {
     grid-template-columns: 1fr;
-  }
-}
-/* Update the logo class to handle both image and text */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  color: #d4af37;
-  font-weight: bold;
-  font-size: 28px;
-  letter-spacing: 1px;
-  transition: color 0.3s;
-}
-
-.logo:hover {
-  color: #b3922c;
-}
-
-.logo-image {
-  height: 50px; /* Adjust based on your navbar height */
-  width: auto;
-  object-fit: contain;
-}
-
-.logo-text {
-  font-size: 28px;
-  font-weight: bold;
-  color: #d4af37;
-}
-
-/* Tablet responsive */
-@media (max-width: 1200px) {
-  .logo-image {
-    height: 45px;
-  }
-  
-  .logo-text {
-    font-size: 24px;
-  }
-}
-
-/* Mobile responsive */
-@media (max-width: 768px) {
-  .logo-image {
-    height: 40px;
-  }
-  
-  .logo-text {
-    font-size: 22px;
-  }
-}
-
-/* Small mobile */
-@media (max-width: 480px) {
-  .logo-image {
-    height: 35px;
-  }
-  
-  .logo-text {
-    font-size: 20px;
-  }
-  
-  .logo {
-    gap: 8px;
-  }
-}
-
-/* If you want only the image without text on mobile */
-@media (max-width: 480px) {
-  .logo-text {
-    display: none; /* Hide text on very small screens, keep only logo */
-  }
-  
-  .logo-image  {
-    height: 40px;
   }
 }
